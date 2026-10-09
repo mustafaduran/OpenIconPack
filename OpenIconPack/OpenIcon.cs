@@ -33,6 +33,8 @@ namespace OpenIconPack
 
         public static Bitmap SetIcon(string iconname)
         {
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            string[] resourceNames = assembly.GetManifestResourceNames();
             Bitmap bitmap;
             bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg);
             return bitmap;

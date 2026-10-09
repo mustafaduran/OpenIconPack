@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="json\OpenIconPack_Default.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="json\OpenIconPack_Default.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Svg" Version="3.4.8" />
   </ItemGroup>
 
