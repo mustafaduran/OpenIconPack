@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace OpenIconPack
 {
@@ -13,16 +14,35 @@ namespace OpenIconPack
     {
         private static IconPack _iconPack;
 
-        public static IconPack GetIconPack()
+        private static string LoadJson()
+        {
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            string[] resourceNames = assembly.GetManifestResourceNames();
+            
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceNames[0]))
+            {
+                if (stream == null)
+                {
+                    throw new FileNotFoundException("Gömülü JSON dosyası bulunamadı. Lütfen kaynak adını kontrol edin.");
+                }
+
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+        }
+
+        private static IconPack GetIconPack()
         {
             if (_iconPack == null)
             {
-                string jsonString = File.ReadAllText("json/OpenIconPack_Default.json"); 
-                _iconPack = JsonSerializer.Deserialize<IconPack>(jsonString);
+                _iconPack = JsonSerializer.Deserialize<IconPack>(LoadJson());
             }
             return _iconPack;
         }
-        public static IconItem GetIcon(string iconName)
+        private static IconItem GetIcon(string iconName)
         {
             var pack = GetIconPack();
             foreach (var category in pack.Icons.Values)

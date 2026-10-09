@@ -9,7 +9,7 @@ namespace OpenIconExample
             IconAayar();
             button1.ImageAlign = ContentAlignment.MiddleLeft;
 
-            button1.Image=OpenIcon.SetIcon(OpenIconNames.cut);
+            button1.Image=OpenIcon.Set(IconName.cut);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = OpenIcon.SetIcon(OpenIconNames.mail);
+            button1.Image = OpenIcon.Set(IconName.mail);
         }
 
         public void IconAayar()

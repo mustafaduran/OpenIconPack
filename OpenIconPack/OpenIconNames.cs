@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenIconPack
 {
-    public static class OpenIconNames
+    public static class IconName
     {
         public const string main_menu="main_menu";
         public const string settings="settings";

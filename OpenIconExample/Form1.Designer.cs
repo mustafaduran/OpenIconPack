@@ -61,6 +61,7 @@
             sizeInput.Name = "sizeInput";
             sizeInput.Size = new Size(103, 23);
             sizeInput.TabIndex = 1;
+            sizeInput.Value = new decimal(new int[] { 25, 0, 0, 0 });
             // 
             // richTextBox1
             // 
@@ -97,6 +98,7 @@
             strokeInput.Name = "strokeInput";
             strokeInput.Size = new Size(103, 23);
             strokeInput.TabIndex = 1;
+            strokeInput.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // groupBox3
             // 
@@ -114,6 +116,7 @@
             opacityInput.Name = "opacityInput";
             opacityInput.Size = new Size(103, 23);
             opacityInput.TabIndex = 1;
+            opacityInput.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // Form1
             // 

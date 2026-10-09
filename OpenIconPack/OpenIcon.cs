@@ -8,7 +8,7 @@ namespace OpenIconPack
 {
     public partial class OpenIcon
     {
-        private static string svgNull = "<svg  viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"> <circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"#E53935\" /> <circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"#FFFFFF\" /> <rect x=\"40\" y=\"82\" width=\"120\" height=\"36\" rx=\"8\" fill=\"#E53935\" /></svg>";
+        private static string svgNull = "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"> <circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"#E53935\" /> <circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"#FFFFFF\" /> <rect x=\"40\" y=\"82\" width=\"120\" height=\"36\" rx=\"8\" fill=\"#E53935\" /></svg>";
 
         static int size = 24;
         static int stroke = 1;
@@ -18,7 +18,7 @@ namespace OpenIconPack
         public static int Stroke {  get { return stroke; } set { stroke = value; } }
         public static float Opacity {  get { return opacity; } set { opacity = value/100; } }
 
-        public static Bitmap SvgToBitmap(string svg)
+        private static Bitmap SvgToBitmap(string svg)
         {
             svg = (string.IsNullOrWhiteSpace(svg)) ?svgNull:svg;
             SvgDocument icon = SvgDocument.FromSvg<SvgDocument>(svg);
@@ -31,7 +31,7 @@ namespace OpenIconPack
             return bitmap;
         }
 
-        public static Bitmap SetIcon(string iconname)
+        public static Bitmap Set(string iconname)
         {
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             string[] resourceNames = assembly.GetManifestResourceNames();
