@@ -17,14 +17,15 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = OpenIcon.Set(IconName.mail);
+            button1.Image = OpenIcon.Set(IconName.mail,size:50,stroke:2);
+            
         }
 
         public void IconAayar()
         {
-            OpenIcon.Size_=(int)sizeInput.Value;
-            OpenIcon.Opacity=(float)opacityInput.Value;
-            OpenIcon.Stroke = (int)strokeInput.Value;
+            OpenIcon.DefaultSize=(int)sizeInput.Value;
+            OpenIcon.DefaultOpacity=(float)opacityInput.Value;
+            OpenIcon.DefaultStroke = (int)strokeInput.Value;
         }
     }
 }

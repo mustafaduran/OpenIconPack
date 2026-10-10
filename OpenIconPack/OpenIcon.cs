@@ -10,33 +10,32 @@ namespace OpenIconPack
     {
         private static string svgNull = "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"> <circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"#E53935\" /> <circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"#FFFFFF\" /> <rect x=\"40\" y=\"82\" width=\"120\" height=\"36\" rx=\"8\" fill=\"#E53935\" /></svg>";
 
-        static int size = 24;
-        static int stroke = 1;
-        static float opacity = 100;
+        static int defaultSize = 24;
+        static int defaultStroke = 1;
+        static float defaultOpacity = 100;
 
-        public static int Size_ {  get { return size; } set {  size = value; } }
-        public static int Stroke {  get { return stroke; } set { stroke = value; } }
-        public static float Opacity {  get { return opacity; } set { opacity = value/100; } }
+        public static int DefaultSize {  get { return defaultSize; } set {  defaultSize = value; } }
+        public static int DefaultStroke {  get { return defaultStroke; } set { defaultStroke = value; } }
+        public static float DefaultOpacity {  get { return defaultOpacity; } set { defaultOpacity = value/100; } }
 
-        private static Bitmap SvgToBitmap(string svg)
+        private static Bitmap SvgToBitmap(string svg,int? size=null,int? stroke=null,float? opacity=null)
         {
             svg = (string.IsNullOrWhiteSpace(svg)) ?svgNull:svg;
             SvgDocument icon = SvgDocument.FromSvg<SvgDocument>(svg);
             Bitmap bitmap;
 
-            icon.StrokeWidth = stroke;
-            icon.Opacity = opacity;
-            bitmap = icon.Draw(size, size);
+            icon.StrokeWidth = (stroke.HasValue)?(int)stroke: defaultStroke;
+            icon.Opacity = (opacity.HasValue)?(float)opacity: defaultOpacity;
+            int _size = (size.HasValue) ?(int)size:defaultSize;
+            bitmap = icon.Draw(_size, _size);
             
             return bitmap;
         }
 
-        public static Bitmap Set(string iconname)
+        public static Bitmap Set(string iconname, int? size = null, int? stroke = null, float? opacity = null)
         {
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            string[] resourceNames = assembly.GetManifestResourceNames();
             Bitmap bitmap;
-            bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg);
+            bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg,size,stroke,opacity);
             return bitmap;
         }
     }//<svg viewBox = "0 0 24 24" class="w-7 h-7" fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d = "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" ></ path >< polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
