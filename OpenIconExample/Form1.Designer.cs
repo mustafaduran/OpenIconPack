@@ -1,4 +1,5 @@
-﻿namespace OpenIconExample
+﻿using OpenIconPack;
+namespace OpenIconExample
 {
     partial class Form1
     {
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             sizeInput = new NumericUpDown();
             richTextBox1 = new RichTextBox();
@@ -36,12 +38,16 @@
             strokeInput = new NumericUpDown();
             groupBox3 = new GroupBox();
             opacityInput = new NumericUpDown();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            addToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)sizeInput).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)strokeInput).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)opacityInput).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -118,11 +124,32 @@
             opacityInput.TabIndex = 1;
             opacityInput.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, deleteToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(107, 48);
+            // 
+            // addToolStripMenuItem
+            // 
+            addToolStripMenuItem.Name = "addToolStripMenuItem";
+            addToolStripMenuItem.Size = new Size(106, 22);
+            addToolStripMenuItem.Text = "add";
+            addToolStripMenuItem.Image = OpenIcon.Set("add");
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(106, 22);
+            deleteToolStripMenuItem.Text = "delete";
+            deleteToolStripMenuItem.Image = OpenIcon.Set(IconName.delete);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(492, 231);
+            ContextMenuStrip = contextMenuStrip1;
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -136,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)strokeInput).EndInit();
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)opacityInput).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -149,5 +177,8 @@
         private NumericUpDown strokeInput;
         private GroupBox groupBox3;
         private NumericUpDown opacityInput;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem addToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
