@@ -44,13 +44,12 @@ namespace OpenIconPack
         }
         private static IconItem GetIcon(string iconName)
         {
-            var pack = GetIconPack();
-            foreach (var category in pack.Icons.Values)
+            foreach (var category in GetIconPack().Icons)
             {
-                var found = category.FirstOrDefault(x => x.Name == iconName);
-                if (found != null) return found;
+                if(category.Name==iconName)return category;
             }
-            return null; 
+            //return new IconItem { Name="",Tags="",Svg=""};
+            return new IconItem(); 
         }
     }
     public class IconPack
@@ -62,7 +61,7 @@ namespace OpenIconPack
         public string Version { get; set; }
 
         [JsonPropertyName("icons")]
-        public Dictionary<string, List<IconItem>> Icons { get; set; }
+        public List<IconItem> Icons { get; set; }
     }
 
     public class IconItem
