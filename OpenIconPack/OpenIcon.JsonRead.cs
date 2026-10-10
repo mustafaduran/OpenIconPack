@@ -44,12 +44,8 @@ namespace OpenIconPack
         }
         private static IconItem GetIcon(string iconName)
         {
-            foreach (var category in GetIconPack().Icons)
-            {
-                if(category.Name==iconName)return category;
-            }
-            //return new IconItem { Name="",Tags="",Svg=""};
-            return new IconItem(); 
+            IconItem icon=GetIconPack().Icons.FirstOrDefault(x=>x.Name==iconName);            
+            return (icon==null)?new IconItem():icon; 
         }
     }
     public class IconPack
