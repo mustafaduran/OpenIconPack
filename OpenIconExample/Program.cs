@@ -1,3 +1,5 @@
+using OpenIconPack;
+
 namespace OpenIconExample
 {
     internal static class Program
@@ -11,7 +13,9 @@ namespace OpenIconExample
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            OpenIcon.JsonPath = "C:\\Users\\User\\Documents\\MyIconPack.json";
             Application.Run(new Form1());
+           
         }
     }
 }

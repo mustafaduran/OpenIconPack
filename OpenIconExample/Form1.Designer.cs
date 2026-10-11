@@ -135,14 +135,12 @@ namespace OpenIconExample
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(106, 22);
             addToolStripMenuItem.Text = "add";
-            addToolStripMenuItem.Image = OpenIcon.Set("add");
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(106, 22);
             deleteToolStripMenuItem.Text = "delete";
-            deleteToolStripMenuItem.Image = OpenIcon.Set(IconName.delete);
             // 
             // Form1
             // 
@@ -157,6 +155,7 @@ namespace OpenIconExample
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)sizeInput).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);

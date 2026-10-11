@@ -9,7 +9,8 @@ namespace OpenIconExample
             IconAayar();
             button1.ImageAlign = ContentAlignment.MiddleLeft;
 
-            button1.Image=OpenIcon.Set(IconName.cut);
+            button1.Image = OpenIcon.Set(IconName.cut);
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -17,15 +18,21 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = OpenIcon.Set("mesaj",size:50,stroke:1.5f,stroke_color:Color.Red);
-            
+            button1.Image = OpenIcon.Set("main_menu", size: 50, stroke: 1.5f, stroke_color: Color.Red);
+
         }
 
         public void IconAayar()
         {
-            OpenIcon.DefaultSize=(int)sizeInput.Value;
-            OpenIcon.DefaultOpacity=(float)opacityInput.Value;
+            
+            OpenIcon.DefaultSize = (int)sizeInput.Value;
+            OpenIcon.DefaultOpacity = (float)opacityInput.Value;
             OpenIcon.DefaultStroke = (int)strokeInput.Value;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

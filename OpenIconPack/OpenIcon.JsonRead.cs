@@ -13,23 +13,47 @@ namespace OpenIconPack
     public partial class OpenIcon
     {
         private static IconPack _iconPack;
+        static string? jsonUrl = null;
+        static string? jsonPath = null;
+        public static string JsonUrl
+        {
+            get { return jsonUrl; }
+            set { jsonUrl = value; }
+        }
+
+        public static string JsonPath
+        {
+            get { return jsonPath; }
+            set { jsonPath = value; }
+        }
 
         private static string LoadJson()
         {
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            string[] resourceNames = assembly.GetManifestResourceNames();
-            
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceNames[0]))
+            if(jsonPath!=null)
             {
-                if (stream == null)
-                {
-                    throw new FileNotFoundException("Gömülü JSON dosyası bulunamadı. Lütfen kaynak adını kontrol edin.");
-                }
+                return File.ReadAllText(jsonPath);
+                
+            }
+            else if(jsonUrl!=null)
+            {
+                return "jsonurl";
+            }
+            else 
+            { 
+                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                string[] resourceNames = assembly.GetManifestResourceNames();
 
-                using (StreamReader reader = new StreamReader(stream))
+                using (Stream stream = assembly.GetManifestResourceStream(resourceNames[0]))
                 {
-                    return reader.ReadToEnd();
+                    if (stream == null)
+                    {
+                        throw new FileNotFoundException("Gömülü JSON dosyası bulunamadı. Lütfen kaynak adını kontrol edin.");
+                    }
+
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        return reader.ReadToEnd();
+                    }
                 }
             }
         }
@@ -38,14 +62,22 @@ namespace OpenIconPack
         {
             if (_iconPack == null)
             {
-                _iconPack = JsonSerializer.Deserialize<IconPack>(LoadJson());
+                try
+                {
+                    _iconPack = JsonSerializer.Deserialize<IconPack>(LoadJson());
+                }
+                catch (Exception)
+                {
+                    _iconPack= new IconPack();
+                }
             }
             return _iconPack;
         }
         private static IconItem GetIcon(string iconName)
         {
-            IconItem icon=GetIconPack().Icons.FirstOrDefault(x=>x.Name==iconName);            
-            return (icon==null)?new IconItem():icon; 
+            var pack = GetIconPack();
+            if (pack?.Icons == null) return null;
+            return pack.Icons.FirstOrDefault(x => x.Name == iconName);
         }
     }
     public class IconPack
