@@ -18,7 +18,7 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = OpenIcon.Set("main_menu", size: 50, stroke: 1.5f, stroke_color: Color.Red);
+            button1.Image = OpenIcon.Set("main_menu");
 
         }
 

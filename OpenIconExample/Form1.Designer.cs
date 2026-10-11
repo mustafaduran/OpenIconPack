@@ -135,12 +135,14 @@ namespace OpenIconExample
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(106, 22);
             addToolStripMenuItem.Text = "add";
+            addToolStripMenuItem.Image = OpenIcon.Set(IconName.add);
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(106, 22);
             deleteToolStripMenuItem.Text = "delete";
+            deleteToolStripMenuItem.Image = OpenIcon.Set(IconName.delete);
             // 
             // Form1
             // 
