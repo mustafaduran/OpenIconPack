@@ -36,7 +36,9 @@ namespace OpenIconPack
             }
             else if(jsonUrl!=null)
             {
-                return "jsonurl";
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+                return client.GetStringAsync(jsonUrl).Result;
             }
             else 
             { 

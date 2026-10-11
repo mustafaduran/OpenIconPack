@@ -13,7 +13,8 @@ namespace OpenIconExample
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            OpenIcon.JsonPath = "C:\\Users\\User\\Documents\\MyIconPack.json";
+           // OpenIcon.JsonPath = "C:\\Users\\User\\Documents\\MyIconPack.json";
+            OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_JSON/refs/heads/main/OpenIconPack_Default.json";
             Application.Run(new Form1());
            
         }
