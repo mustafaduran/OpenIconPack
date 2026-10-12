@@ -39,6 +39,7 @@ using OpenIconPack;
 
 // Get a bitmap (24 × 24 by default)
 var homeIcon = OpenIcon.Set("home");           // returns System.Drawing.Bitmap
+var addIcon = OpenIcon.Set(IconName.add);           // returns System.Drawing.Bitmap
 
 // Custom size and styling
 var settingsIcon = OpenIcon.Set("settings", size: 48, stroke: 2, stroke_color: Color.Red, opacity: 80);
@@ -52,7 +53,6 @@ The static `DefaultSize`, `DefaultStroke`, `DefaultOpacity`, and `DefaultStrokeC
 ## Default Settings
 Can set default settings in the Program.cs
 ```
-
 //Can use .json file in file system
 OpenIcon.JsonPath = "C:\\Users\\User\\Documents\\MyIconPack.json";
 
