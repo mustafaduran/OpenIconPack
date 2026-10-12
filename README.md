@@ -2,6 +2,8 @@
 
 **OpenIconPack** is a C# library that provides a curated collection of open‑source SVG icons for .NET projects. The icons are stored as SVG strings and can be rendered, resized, or integrated into UI frameworks (WinForms, WPF, MAUI, Blazor, etc.).
 
+An icon library that allows you to load SVG icons from built-in and external JSON sources, customize them, and use them in .NET applications.
+
 ## Features
 
 - ✅ 60+ ready‑to‑use icons (home, settings, files, actions, emotions, etc.)
