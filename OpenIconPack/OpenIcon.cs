@@ -1,18 +1,13 @@
-﻿using Svg;
-using System.Drawing;
-using System.IO;
-using System.Runtime.CompilerServices;
-
+﻿
 namespace OpenIconPack
 {
     public partial class OpenIcon
     {
-        private static string svgNull = "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"> <circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"#E53935\" /> <circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"#FFFFFF\" /> <rect x=\"40\" y=\"82\" width=\"120\" height=\"36\" rx=\"8\" fill=\"#E53935\" /></svg>";
+        public static string svgNull = "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"> <circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"#E53935\" /> <circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"#FFFFFF\" /> <rect x=\"40\" y=\"82\" width=\"120\" height=\"36\" rx=\"8\" fill=\"#E53935\" /></svg>";
 
         static int defaultSize = 24;
         static float defaultStroke = 1;
         static float defaultOpacity = 100;
-        static Color defaultStrokeColor = Color.Black;
 
         public static int DefaultSize 
         {
@@ -30,32 +25,35 @@ namespace OpenIconPack
             set { defaultOpacity = value/100;}
         }
 
-        public static Color DefaultStrokeColor 
+        public static string DefaultStrokeColorHex { get; set; } = "#000000";
+
+        public static string GetSvg(string? iconName=null)
         {
-            get { return defaultStrokeColor;}
-            set { defaultStrokeColor = value; }
+            if (iconName == null) { return svgNull; }
+            return OpenIcon.GetIcon(iconName).Svg;
         }
+        
 
-        private static Bitmap SvgToBitmap(string svg,int? size=null,float? stroke=null,Color? stroke_color=null,float? opacity=null)
-        {
-            svg = (string.IsNullOrWhiteSpace(svg)) ?svgNull:svg;
-            SvgDocument icon = SvgDocument.FromSvg<SvgDocument>(svg);
-            Bitmap bitmap;
+        //private static Bitmap SvgToBitmap(string svg,int? size=null,float? stroke=null,Color? stroke_color=null,float? opacity=null)
+        //{
+        //    svg = (string.IsNullOrWhiteSpace(svg)) ?svgNull:svg;
+        //    SvgDocument icon = SvgDocument.FromSvg<SvgDocument>(svg);
+        //    Bitmap bitmap;
 
-            icon.StrokeWidth = (stroke.HasValue)?(int)stroke: defaultStroke;
-            icon.Opacity = (opacity.HasValue)?(float)opacity: defaultOpacity;
-            icon.Stroke =new SvgColourServer((stroke_color.HasValue)?(Color)stroke_color:defaultStrokeColor);
-            int _size = (size.HasValue) ?(int)size:defaultSize;
-            bitmap = icon.Draw(_size, _size);
+        //    icon.StrokeWidth = (stroke.HasValue)?(int)stroke: defaultStroke;
+        //    icon.Opacity = (opacity.HasValue)?(float)opacity: defaultOpacity;
+        //    icon.Stroke =new SvgColourServer((stroke_color.HasValue)?(Color)stroke_color:defaultStrokeColor);
+        //    int _size = (size.HasValue) ?(int)size:defaultSize;
+        //    bitmap = icon.Draw(_size, _size);
             
-            return bitmap;
-        }
+        //    return bitmap;
+        //}
 
-        public static Bitmap Set(string iconname, int? size = null, float? stroke = null,Color? stroke_color=null, float? opacity = null)
-        {
-            Bitmap bitmap;
-            bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg,size,stroke,stroke_color,opacity);
-            return bitmap;
-        }
+        //public static Bitmap Set(string iconname, int? size = null, float? stroke = null,Color? stroke_color=null, float? opacity = null)
+        //{
+        //    Bitmap bitmap;
+        //    bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg,size,stroke,stroke_color,opacity);
+        //    return bitmap;
+        //}
     }
 }

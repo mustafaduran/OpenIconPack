@@ -1,4 +1,5 @@
 using OpenIconPack;
+
 namespace OpenIconExample
 {
     public partial class Form1 : Form
@@ -9,7 +10,7 @@ namespace OpenIconExample
             IconAayar();
             button1.ImageAlign = ContentAlignment.MiddleLeft;
 
-            button1.Image = OpenIcon.Set(IconName.cut);
+            button1.Image = WinFormExtension.GetBitmap(IconName.cut);
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -18,7 +19,7 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = OpenIcon.Set("main_menu");
+            button1.Image = WinFormExtension.GetBitmap("main_menu");
 
         }
 
