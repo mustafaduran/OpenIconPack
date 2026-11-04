@@ -10,8 +10,9 @@
 
 - 60+ ready-to-use icons for navigation, files, actions, and more
 - Icons stored as SVG markup in `OpenIconPack_Default.json`
-- `OpenIcon` helper methods for retrieving and customizing icons
-- Configurable icon size, stroke, opacity, and color
+- `OpenIcon.GetSvg` to retrieve an icon's SVG markup
+- `WinFormExtension.GetBitmap` to render an icon as a Windows Forms bitmap
+- Configurable icon size, stroke, opacity, and color for bitmap rendering
 - MIT licensed for personal and commercial use
 
 ## Installation
@@ -26,43 +27,44 @@ Or install it from the [NuGet package page](https://www.nuget.org/packages/OpenI
 
 ## Quick start
 
+### Get SVG markup
+
 ```csharp
 using OpenIconPack;
-using System.Drawing;
 
-// Get an icon as a bitmap (24 × 24 by default)
-var homeIcon = OpenIcon.Set("home");
-var addIcon = OpenIcon.Set(IconName.add);
-
-// Set a custom size and style
-var settingsIcon = OpenIcon.Set(
-    "settings",
-    size: 48,
-    stroke: 2,
-    stroke_color: Color.Red,
-    opacity: 80);
-
-// Retrieve the raw SVG string
-var svg = OpenIcon.GetIcon("bell").Svg;
+string svg = OpenIcon.GetSvg("home");
 ```
 
-You can change the defaults globally before calling `Set`:
+### Use an icon in Windows Forms
 
 ```csharp
-OpenIcon.DefaultStroke = 1.8f;
-OpenIcon.DefaultStrokeColor = Color.Gray;
+using OpenIconPack;
+
+// Assign the rendered icon bitmap to a Windows Forms control
+button1.Image = WinFormExtension.GetBitmap(IconName.cut);
+
+// Optional: set shared rendering defaults
 OpenIcon.DefaultSize = 32;
+OpenIcon.DefaultStroke = 1.8f;
+OpenIcon.DefaultOpacity = 100;
+WinFormExtension.DefaultStrokeColor = Color.Gray;
+```
+
+`WinFormExtension.GetBitmap` also accepts an icon name as a string and optional size and color arguments:
+
+```csharp
+var icon = WinFormExtension.GetBitmap("home", size: 32, color: Color.DarkSlateBlue);
 ```
 
 ## Use an external icon JSON source
 
-Configure a local JSON file or a JSON file hosted online:
+Configure a local JSON file or a JSON file hosted online before requesting an icon:
 
 ```csharp
 // Load from a local file
 OpenIcon.JsonPath = @"C:\Users\User\Documents\MyIconPack.json";
 
-// Load from a GitHub-hosted JSON file
+// Or load from a GitHub-hosted JSON file
 OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_JSON/refs/heads/main/OpenIconPack_Default.json";
 ```
 
@@ -78,15 +80,15 @@ The full SVG definitions are in `OpenIconPack/json/OpenIconPack_Default.json`.
 
 ### 1.0.0
 
-The initial NuGet release of OpenIconPack. It includes the built-in icon collection, support for external JSON icon sources, and options to customize icon size and appearance.
+The initial NuGet release of OpenIconPack. It includes the built-in icon collection, support for external JSON icon sources, SVG retrieval, and Windows Forms bitmap rendering.
 
-- [Install OpenIconPack from NuGet](https://www.nuget.org/packages/OpenIconPack/1.0.0)
+- [Install OpenIconPack 1.0.0 from NuGet](https://www.nuget.org/packages/OpenIconPack/1.0.0)
 - [Browse GitHub Releases](https://github.com/mustafaduran/OpenIconPack/releases)
 
 ## Contributing
 
 1. Fork the repository.
-2. Add an icon to `OpenIconPack/json/OpenIconPack_Default.json` following the existing format, or add its name to `OpenIconPack/OpenIconNames.cs`.
+2. Add an icon to `OpenIconPack/json/OpenIconPack_Default.json` following the existing format, or add its name to `OpenIconPack/OpenIcon.Names.cs`.
 3. Update this README if the available icons change.
 4. Open a pull request.
 
