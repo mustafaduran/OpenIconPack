@@ -69,6 +69,7 @@ OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_
 ```
 
 ## Available icons
+[![OpenIconPack](https://img.shields.io/badge/OpenIconPack-Icons_Table-4F46E5?style=for-the-badge&logo=github)](https://mustafaduran.github.io/OpenIconPack/)
 
 Use these names when requesting icons:
 
