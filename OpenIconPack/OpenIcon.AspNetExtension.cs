@@ -8,7 +8,7 @@ namespace OpenIconPack
 {
     public static partial class AspNetExtension
     {
-        public static string GetSvg(string iconName, string? colorHex = null, int? size = null)
+        public static string GetSvg(string iconName, string colorHex = null, int size = 0)
         {
             string svg = OpenIcon.GetSvg(iconName);
 
@@ -19,7 +19,7 @@ namespace OpenIconPack
         }
 
         
-        public static string ToSvg(this string iconName, string? colorHex = null, int? size = null)
+        public static string ToSvg(this string iconName, string colorHex = null, int size = 0)
         {
             return GetSvg(iconName, colorHex, size);
         }

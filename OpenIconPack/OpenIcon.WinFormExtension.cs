@@ -7,12 +7,12 @@ namespace OpenIconPack
     {
         public static Color DefaultStrokeColor { get; set; } = Color.Black;
          
-        private static Bitmap SvgToBmp(string? svg=null, int? size=null, float? stroke=null, Color? stroke_color=null, float? opacity = null)
+        private static Bitmap SvgToBmp(string svg=null, int size=0, float stroke=0, Color? stroke_color=null, float opacity = 0)
         {
-            string svg_ = svg ?? OpenIcon.svgNull;
-            int size_=size??OpenIcon.DefaultSize;
-            float stroke_=stroke??OpenIcon.DefaultStroke;
-            float opacity_ = opacity ?? OpenIcon.DefaultOpacity;
+            string svg_ = (svg!=null)?svg: OpenIcon.svgNull;
+            int size_=(size!=0)?size:OpenIcon.DefaultSize;
+            float stroke_=(stroke!=0)?stroke:OpenIcon.DefaultStroke;
+            float opacity_ = (opacity!=0)?opacity: OpenIcon.DefaultOpacity;
             Color stroke_color_ = stroke_color ?? DefaultStrokeColor;
 
 
@@ -28,10 +28,10 @@ namespace OpenIconPack
             return bitmap;
         }
 
-        public static Bitmap GetBitmap(string iconName, int? size = null, Color? color = null)
+        public static Bitmap GetBitmap(string iconName, int size = 0, int stroke=0,Color? color=null)
         {
             string svg = OpenIcon.GetSvg(iconName);
-            return SvgToBmp(svg, size, stroke_color: color);
+            return SvgToBmp(svg, size,stroke, stroke_color: color);
         }
     }
 }

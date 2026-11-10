@@ -1,13 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFrameworks>net8.0;net472</TargetFrameworks>
+	  
+	  
+    <Nullable Condition="'$(TargetFramework)' == 'net8.0'">enable</Nullable>
+    <Nullable Condition="'$(TargetFramework)' == 'net472'">disable</Nullable>
+
+
+	  <ImplicitUsings Condition="'$(TargetFramework)' == 'net8.0'">enable</ImplicitUsings>
+	  <ImplicitUsings Condition="'$(TargetFramework)' == 'net472'">disable</ImplicitUsings>
+	  
     <PackageId>OpenIconPack</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Open Icon Pack</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Mustafa Duran</Authors>
     <Company>Mustafa Duran</Company>
     <Product>Open Icon Pack</Product>
@@ -39,5 +46,9 @@
   <ItemGroup>
     <PackageReference Include="Svg" Version="3.4.8" />
   </ItemGroup>
+	
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+		<PackageReference Include="System.Text.Json" Version="8.0.5" />
+	</ItemGroup>
 
 </Project>

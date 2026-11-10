@@ -27,33 +27,11 @@ namespace OpenIconPack
 
         public static string DefaultStrokeColorHex { get; set; } = "#000000";
 
-        public static string GetSvg(string? iconName=null)
+        public static string GetSvg(string iconName=null)
         {
             if (iconName == null) { return svgNull; }
             return OpenIcon.GetIcon(iconName).Svg;
         }
-        
 
-        //private static Bitmap SvgToBitmap(string svg,int? size=null,float? stroke=null,Color? stroke_color=null,float? opacity=null)
-        //{
-        //    svg = (string.IsNullOrWhiteSpace(svg)) ?svgNull:svg;
-        //    SvgDocument icon = SvgDocument.FromSvg<SvgDocument>(svg);
-        //    Bitmap bitmap;
-
-        //    icon.StrokeWidth = (stroke.HasValue)?(int)stroke: defaultStroke;
-        //    icon.Opacity = (opacity.HasValue)?(float)opacity: defaultOpacity;
-        //    icon.Stroke =new SvgColourServer((stroke_color.HasValue)?(Color)stroke_color:defaultStrokeColor);
-        //    int _size = (size.HasValue) ?(int)size:defaultSize;
-        //    bitmap = icon.Draw(_size, _size);
-            
-        //    return bitmap;
-        //}
-
-        //public static Bitmap Set(string iconname, int? size = null, float? stroke = null,Color? stroke_color=null, float? opacity = null)
-        //{
-        //    Bitmap bitmap;
-        //    bitmap = SvgToBitmap(OpenIcon.GetIcon(iconname).Svg,size,stroke,stroke_color,opacity);
-        //    return bitmap;
-        //}
     }
 }

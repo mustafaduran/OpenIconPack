@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
 namespace OpenIconPack
 {
     public partial class OpenIcon
     {
         private static IconPack _iconPack;
-        static string? jsonUrl = null;
-        static string? jsonPath = null;
+        static string jsonUrl = null;
+        static string jsonPath = null;
         public static string JsonUrl
         {
             get { return jsonUrl; }
@@ -85,24 +85,24 @@ namespace OpenIconPack
     public class IconPack
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("version")]
-        public string Version { get; set; }
+        public string Version { get; set; } = string.Empty;
 
         [JsonPropertyName("icons")]
-        public List<IconItem> Icons { get; set; }
+        public List<IconItem> Icons { get; set; } = new List<IconItem>();
     }
 
     public class IconItem
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonPropertyName("tags")]
-        public string Tags { get; set; }
+        public string Tags { get; set; } = string.Empty;
 
         [JsonPropertyName("svg")]
-        public string Svg { get; set; }
+        public string Svg { get; set; } = string.Empty;
     }
 }
