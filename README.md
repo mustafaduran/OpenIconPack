@@ -6,6 +6,15 @@
 
 **OpenIconPack** is a .NET library that provides a curated collection of open-source SVG icons. Load icons from the built-in collection or external JSON sources, customize them, and use them in your .NET applications.
 
+## Supported frameworks
+
+OpenIconPack supports:
+
+- .NET 8.0 and later
+- .NET Framework 4.7.2 and later
+
+> **Note:** The project targets `net472`, which means .NET Framework 4.7.2. There is no .NET Framework 4.7.8 release; if you meant 4.7.2, that is the supported target.
+
 ## Features
 
 - 60+ ready-to-use icons for navigation, files, actions, and more
@@ -69,13 +78,10 @@ OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_
 ```
 
 ## Available icons
+
 [![OpenIconPack](https://img.shields.io/badge/OpenIconPack-Icons_Table-4F46E5?style=for-the-badge&logo=github)](https://mustafaduran.github.io/OpenIconPack/)
 
-Use these names when requesting icons:
-
-`main_menu`, `settings`, `filter`, `forward`, `back`, `home`, `left_arrow`, `right_arrow`, `up_arrow`, `down_arrow`, `refresh`, `open_folder`, `save`, `pdf_file`, `excel_file`, `json_file`, `word_file`, `database`, `server`, `delete`, `copy`, `cut`, `paste`, `edit`, `add`, `terminal`, `heart`, `bell`, `browser`, `user`, `users`, `mail`, `phone`, `url`, `attachment`, `stop`, `play`, `success`, `error`, `warning`, `info`, `locked`, `unlock`, `eye`, `eye_off`, `wiFi`, `star`, `tag`, `calendar`, `clock`.
-
-The full SVG definitions are in `OpenIconPack/json/OpenIconPack_Default.json`.
+Browse the icon table for available icon names. The full SVG definitions are in `OpenIconPack/json/OpenIconPack_Default.json`.
 
 ## Releases
 
