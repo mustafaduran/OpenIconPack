@@ -14,7 +14,7 @@
     <PackageId>OpenIconPack</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Open Icon Pack</Title>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Mustafa Duran</Authors>
     <Company>Mustafa Duran</Company>
     <Product>Open Icon Pack</Product>
