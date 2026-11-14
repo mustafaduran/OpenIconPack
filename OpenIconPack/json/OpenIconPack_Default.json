@@ -251,6 +251,86 @@
       "name": "clock",
       "tags": "clock, time",
       "svg": "<svg viewBox = \"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/></svg>"
+    },
+    {
+      "name": "extraction",
+      "tags": "extraction",
+      "svg": "<svg viewBox = \"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/></svg>"
+    },
+    {
+      "name": "multiplication",
+      "tags": "multiplication",
+      "svg": "<svg viewBox = \"0 024 24\" class=\" \"w-7\" \"h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"5\" x2=\"18\" y2=\"19\"/><line x1=\"18\" y1=\"5\" x2=\"5\" y2=\"19\"/></svg>"
+    },
+    {
+      "name": "division",
+      "tags": "divisin",
+      "svg": "<svg \"viewBox=\"0 0 24 24\" \"class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"13\" y1=\"5\" x2=\"5\" y2=\"19\"/></svg>"
+    },
+    {
+      "name": "search",
+      "tags": "search, find, magnifier",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg>"
+    },
+    {
+      "name": "zoom_in",
+      "tags": "zoom in, magnify plus",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/><line x1=\"11\" y1=\"8\" x2=\"11\" y2=\"14\"/><line x1=\"8\" y1=\"11\" x2=\"14\" y2=\"11\"/></svg>"
+    },
+    {
+      "name": "zoom_out",
+      "tags": "zoom out, magnify minus",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/><line x1=\"8\" y1=\"11\" x2=\"14\" y2=\"11\"/></svg>"
+    },
+    {
+      "name": "image",
+      "tags": "image photo picture",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.5\"/><polyline points=\"21 15 16 10 5 21\"/></svg>"
+    },
+    {
+      "name": "download",
+      "tags": "download",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg>"
+    },
+    {
+      "name": "color_palette",
+      "tags": "palette color",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"black\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"black\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"black\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"black\"/><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.55-2.5 5.5-5.5C21.5 6.5 17.5 2 12 2z\"/></svg>"
+    },
+    {
+      "name": "text",
+      "tags": "text typography font",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 7 4 4 20 4 20 7\"/><line x1=\"9\" y1=\"20\" x2=\"15\" y2=\"20\"/><line x1=\"12\" y1=\"4\" x2=\"12\" y2=\"20\"/></svg>"
+    },
+    {
+      "name": "align_left",
+      "tags": "align left",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"17\" y1=\"10\" x2=\"3\" y2=\"10\"/><line x1=\"21\" y1=\"6\" x2=\"3\" y2=\"6\"/><line x1=\"21\" y1=\"14\" x2=\"3\" y2=\"14\"/><line x1=\"17\" y1=\"18\" x2=\"3\" y2=\"18\"/></svg>"
+    },
+    {
+      "name": "align_right",
+      "tags": "align right",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"21\" y1=\"10\" x2=\"7\" y2=\"10\"/><line x1=\"21\" y1=\"6\" x2=\"3\" y2=\"6\"/><line x1=\"21\" y1=\"14\" x2=\"3\" y2=\"14\"/><line x1=\"21\" y1=\"18\" x2=\"7\" y2=\"18\"/></svg>"
+    },
+    {
+      "name": "centered",
+      "tags": "centered text align center",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"18\" y1=\"10\" x2=\"6\" y2=\"10\"/><line x1=\"21\" y1=\"6\" x2=\"3\" y2=\"6\"/><line x1=\"21\" y1=\"14\" x2=\"3\" y2=\"14\"/><line x1=\"18\" y1=\"18\" x2=\"6\" y2=\"18\"/></svg>"
+    },
+    {
+      "name": "table",
+      "tags": "table grid",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 3H5a2 2 0 0 0-2 2v4m14-6h4a2 2 0 0 1 2 2v4M3 15v4a2 2 0 0 0 2 2h4m10-6v4a2 2 0 0 1-2 2h-4M3 3h18v18H3z\"/></svg>"
+    },
+    {
+      "name": "eraser",
+      "tags": "eraser clear",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 20H7L3 16c-.8-.8-.8-2 0-2.8L13.2 3.2c.8-.8 2-.8 2.8 0l4 4c.8.8.8 2 0 2.8L11 19\"/><path d=\"M6 12.5L12.5 19\"/></svg>"
+    },
+    {
+      "name": "pen",
+      "tags": "pen draw",
+      "svg": "<svg viewBox=\"0 0 24 24\" class=\"w-7 h-7\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 19l7-7 3 3-7 7-3-3z\"/><path d=\"M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z\"/><path d=\"M2 2l7.5 7.5\"/></svg>"
     }
   ]
 }

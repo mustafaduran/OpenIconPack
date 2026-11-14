@@ -28,7 +28,7 @@ namespace OpenIconPack
             return bitmap;
         }
 
-        public static Bitmap GetBitmap(string iconName, int size = 0, int stroke=0,Color? color=null)
+        public static Bitmap GetBitmap(string iconName, int size = 0, float stroke=0,Color? color=null)
         {
             string svg = OpenIcon.GetSvg(iconName);
             return SvgToBmp(svg, size,stroke, stroke_color: color);
