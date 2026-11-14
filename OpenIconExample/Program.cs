@@ -14,7 +14,7 @@ namespace OpenIconExample
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
            // OpenIcon.JsonPath = "C:\\Users\\User\\Documents\\MyIconPack.json";
-            OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_JSON/refs/heads/main/OpenIconPack_Default.json";
+           // OpenIcon.JsonUrl = "https://raw.githubusercontent.com/mustafaduran/OpenIconPack_JSON/refs/heads/main/OpenIconPack_Default.json";
             OpenIcon.DefaultStroke = 1.8f;
             WinFormExtension.DefaultStrokeColor = Color.Gray;
             OpenIcon.DefaultSize = 32;

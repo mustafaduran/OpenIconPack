@@ -57,6 +57,22 @@ namespace OpenIconPack
         public const string tag="tag";
         public const string calendar="calendar";
         public const string clock="clock";
+        public const string extraction = "extraction";
+        public const string multiplication = "multiplication";
+        public const string clocdivisionk = "division";
+        public const string search = "search";
+        public const string zoom_in = "zoom_in";
+        public const string zoom_out = "zoom_out";
+        public const string image = "image";
+        public const string download = "download";
+        public const string color_palette = "color_palette";
+        public const string text = "text";
+        public const string align_left = "align_left";
+        public const string align_right = "align_right";
+        public const string centered = "centered";
+        public const string table = "table";
+        public const string eraser = "eraser";
+        public const string pen = "pen";
 
     }
 }

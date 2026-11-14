@@ -19,7 +19,7 @@ namespace OpenIconExample
             //button1.ImageAlign = ContentAlignment.MiddleLeft;
             //int size = (int)sizeInput.Value;
             //button1.Image = OpenIcon.SvgToBitmap(richTextBox1.Text.ToString());
-            button1.Image = WinFormExtension.GetBitmap("main_menu");
+            button1.Image = WinFormExtension.GetBitmap(IconName.pen);
 
         }
 
